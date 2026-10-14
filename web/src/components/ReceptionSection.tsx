@@ -36,18 +36,22 @@ export const ReceptionSection: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-full min-h-0">
-      {/* Coluna 1: Totem do Paciente (5 colunas) */}
+      {/* Coluna 1: Totem do Paciente montado via Composition Pattern */}
       <div className="lg:col-span-5">
-        <CheckinForm onSuccess={handleCheckinSuccess} />
+        <CheckinForm.Root onSuccess={handleCheckinSuccess}>
+          <CheckinForm.Header />
+          <CheckinForm.Content>
+            <CheckinForm.Input />
+            <CheckinForm.Feedback />
+            <CheckinForm.Keypad />
+            <CheckinForm.Submit />
+          </CheckinForm.Content>
+        </CheckinForm.Root>
       </div>
 
-      {/* Coluna 2: Fila de Atendimento (7 colunas) */}
+      {/* Coluna 2: Fila de Atendimento */}
       <div className="lg:col-span-7 h-full min-h-0">
-        <QueueList
-          queue={queue}
-          loading={loading}
-          onRefresh={loadQueue}
-        />
+        <QueueList queue={queue} loading={loading} onRefresh={loadQueue} />
       </div>
     </div>
   );
