@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CheckIn {
+  id           String   @id @default(uuid())
+  cpf          String
+  pacienteNome String
+  createdAt    DateTime @default(now())
+
+  @@map("check_ins")
+}
