@@ -10,7 +10,8 @@ datasource db {
 model CheckIn {
   id           String   @id @default(uuid())
   cpf          String
-  pacienteNome String
+  name String
+  birth String
   createdAt    DateTime @default(now())
 
   @@map("check_ins")
