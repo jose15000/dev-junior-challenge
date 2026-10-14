@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #007889;
+  --color-brand-dark: #003B4E;
+  --color-brand-light: #E6F2F4;
+  --color-brand-hover: #00606e;
+  
+  --color-haoc-navy: #003B4E;
+  --color-haoc-navy-deep: #002633;
+  --color-haoc-teal: #00B2BB;
+  --color-haoc-teal-hover: #0099A0;
+  --color-haoc-teal-light: #EBF7F8;
+  --color-haoc-blue: #007889;
+  --color-haoc-bg: #F4F8FA;
+  --color-haoc-text: #2D3748;
+}
+
+@layer base {
+  body {
+    background-color: #F4F8FA;
+    color: #2D3748;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Marca d'água sutil e geométrica institucional (Mies van der Rohe / HAOC) */
+.haoc-bg-pattern {
+  background-color: #F4F8FA;
+  background-image: radial-gradient(circle at 100% 0%, rgba(0, 178, 187, 0.05) 0%, transparent 28%),
+                    radial-gradient(circle at 0% 100%, rgba(0, 59, 78, 0.04) 0%, transparent 35%);
+}

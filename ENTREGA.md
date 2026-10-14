@@ -1,4 +1,4 @@
-# Entrega — [seu nome]
+# Entrega — José Henrique Oliveira de Carvalho
 
 > Preencha este arquivo. Ele nos ajuda a rodar e entender o seu projeto.
 
