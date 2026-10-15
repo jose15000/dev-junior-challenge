@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { PatientService } from '../../services/patient/patient.service.js';
 import { checkinDTO } from '../../dtos/checkinDTO.js';
 

@@ -23,10 +23,22 @@ export const ReceptionSection: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    loadQueue();
+    let mounted = true;
+    void (async () => {
+      if (mounted) {
+        await loadQueue();
+      }
+    })();
     // Atualização periódica da fila da recepção a cada 10s
-    const interval = setInterval(loadQueue, 10000);
-    return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      if (mounted) {
+        void loadQueue();
+      }
+    }, 10000);
+    return () => {
+      mounted = false;
+      clearInterval(interval);
+    };
   }, [loadQueue]);
 
   const handleCheckinSuccess = (newCheckin: CheckIn) => {
